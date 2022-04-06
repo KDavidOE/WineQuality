@@ -15,25 +15,24 @@ namespace DLFeleves_RES572
             //FileConverter.ConvertResultToBinary("data_multi.txt", "data_binary.txt", 7);
             //FileConverter.ConvertResultToBinary("test_multi.txt", "test_binary.txt", 7);
 
-
             RunBinary();
             //RunMulti();
         }
 
         public static void RunBinary()
         {
-            DataSet.LoadMinMax("data_binary.txt");
-            testDS = new DataSet("test_binary.txt", 11, 1);
-            trainDS = new DataSet("data_binary.txt", 11, 1);
-            RunNetwork("SavedNetworkBinary.txt", "binary", 10, 0, 0);
+            DataSet.LoadMinMax(@"Data\data_binary.txt");
+            testDS = new DataSet(@"Data\test_binary.txt", 11, 1);
+            trainDS = new DataSet(@"Data\data_binary.txt", 11, 1);
+            RunNetwork(@"Data\SavedNetworkBinary.txt", "binary", 10, 0, 0);
         }
 
         public static void RunMulti()
         {
-            DataSet.LoadMinMax( "data_multi.txt");
-            testDS = new DataSet("test_multi.txt", 11, 6);
-            trainDS = new DataSet("data_multi.txt", 11, 6);
-            RunNetwork("SavedNetworkMulti.txt", "multi", 10, 0, 0);
+            DataSet.LoadMinMax(@"Data\data_multi.txt");
+            testDS = new DataSet(@"Data\test_multi.txt", 11, 6);
+            trainDS = new DataSet(@"Data\data_multi.txt", 11, 6);
+            RunNetwork(@"Data\SavedNetworkMulti.txt", "multi", 10, 0, 0);
         }
 
         public static void RunNetwork(string file, string outputFileName, int hiddenLayerSize, double l1weight, double l2weight)
